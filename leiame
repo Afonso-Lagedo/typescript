@@ -1,0 +1,16 @@
+INSTALAR NODE
+NO LINUX
+sudo apt-get install nodejs
+
+VERIFICAR NODE E NPM
+node -v
+npm -v
+
+INSTALAR GLOBALMENTE O TYPESCRIPT
+npm install -g typescript
+
+VERIFICAR VERSÃO TYPESCRIPT
+tsc -v
+
+RODAR PROJETO
+tsc NOME_ARQUIVO
