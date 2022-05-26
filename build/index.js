@@ -1,3 +1,3 @@
 "use strict";
 const nome = "Afonso";
-console.log("Olá: " + nome);
+console.log("Olá: " + nome + "!");

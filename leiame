@@ -20,3 +20,6 @@ tsc NOME_ARQUIVO.ts --target "ES2015"
 
 PARA CONFIG TYPESCRIPT
 tsc --init
+
+PARA BUILD AUTO
+tsc --watch
