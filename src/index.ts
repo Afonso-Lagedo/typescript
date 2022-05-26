@@ -1,10 +1,10 @@
-//Type number = (int, float, hex, binary)
-let valor1: number;
-valor1 = 20;
+//two variables types in one variable
+let userId: number | string;
+userId=123;
+console.log(typeof userId);//type variable
+console.log(userId);
 
-let valor2: number =10;
+userId="123"
 
-let valor3 = 5;//no affirmed what is number
-
-console.log(valor1+valor2+valor3);
-
+console.log(typeof userId);//type variable
+console.log(userId);

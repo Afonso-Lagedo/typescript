@@ -1,6 +1,8 @@
 "use strict";
-let valor1;
-valor1 = 20;
-let valor2 = 10;
-let valor3 = 5;
-console.log(valor1 + valor2 + valor3);
+let userId;
+userId = 123;
+console.log(typeof userId);
+console.log(userId);
+userId = "123";
+console.log(typeof userId);
+console.log(userId);
