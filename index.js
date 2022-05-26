@@ -1,2 +1,3 @@
-var nome = "Afonso";
-console.log("Olá " + nome);
+"use strict";
+const nome = "Afonso";
+console.log("Olá: " + nome);
