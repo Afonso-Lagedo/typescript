@@ -1,3 +1,4 @@
 "use strict";
-let nome = "Afonso";
-console.log(nome);
+let tecnologia;
+tecnologia = "JavaScript";
+console.log(tecnologia);
