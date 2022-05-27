@@ -1,54 +1,30 @@
-//Type ENUM
+/*function login(userName:string){//typing of function parameter
+    console.log('Bem vindo', userName);
+}*/
 
-enum Colors{
-    white ="#FFF",
-    black ="#000"
+/*function login(userName:string):void{//return typing 
+    let message = "Bem vindo " + userName; 
+    console.log(message);
+}
+login("Afonso");*/
+
+/*function login(userName: string): boolean{
+    let text ="Teste: " + userName;
+
+    console.log(text);
+
+    return true;
 }
 
-console.log(Colors.black);
+const test = login("teste 123");
 
-//Example two
-enum Status{
-    ADMIN,
-    USER,
-    STAFF
+console.log(test);//return the type
+*/
+
+function login (userName: string|number){
+    let message = "Bem vindo" + userName;
+    console.log(userName);
 }
 
-console.log(Status.ADMIN);
-console.log(Status.USER);
-console.log(Status.STAFF);
-
-//Example three
-enum StatusTwo{
-    ADMIN = 2,
-    USER = 0,
-    STAFF = 1
-}
-
-console.log(StatusTwo.ADMIN);
-console.log(StatusTwo.USER);
-console.log(StatusTwo.STAFF);
-
-//###Type NULL###
-let nome: null;
-//No input value
-
-//###Undefined###
-let example;
-console.log(example);
-
-//###Unknown###
-let a: unknown;
-a=2;
-console.log(a);
-a="b";
-console.log(a);
-
-//###Assertions###
-let c: unknown = 1;
-let mudaC: number = 2;
-console.log(mudaC);
-
-//mudaC = C; IT IS ERROR
-mudaC = c as number;//IT IS OK;
-console.log(mudaC);
+login("Afonso");
+login(123);
