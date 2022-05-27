@@ -1,30 +1,11 @@
-/*function login(userName:string){//typing of function parameter
-    console.log('Bem vindo', userName);
-}*/
-
-/*function login(userName:string):void{//return typing 
-    let message = "Bem vindo " + userName; 
-    console.log(message);
-}
-login("Afonso");*/
-
-/*function login(userName: string): boolean{
-    let text ="Teste: " + userName;
-
-    console.log(text);
-
-    return true;
+//FUNCTION
+function returnApi(url:string):string{
+    return url;
 }
 
-const test = login("teste 123");
-
-console.log(test);//return the type
-*/
-
-function login (userName: string|number){
-    let message = "Bem vindo" + userName;
-    console.log(userName);
+//ARROWFUNCTION
+const return_api = (url:string):void =>{
+    console.log('URL:',url);
 }
 
-login("Afonso");
-login(123);
+return_api('https://teste.com');

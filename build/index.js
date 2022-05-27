@@ -1,7 +1,8 @@
 "use strict";
-function login(userName) {
-    let message = "Bem vindo" + userName;
-    console.log(userName);
+function returnApi(url) {
+    return url;
 }
-login("Afonso");
-login(123);
+const return_api = (url) => {
+    console.log('URL:', url);
+};
+return_api('https://teste.com');
