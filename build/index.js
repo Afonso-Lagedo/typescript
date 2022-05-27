@@ -1,8 +1,7 @@
 "use strict";
-function returnApi(url) {
-    return url;
+function cadastro(email, senha, nome = "Aluno") {
+    let data = { email, senha, nome };
+    console.log(data);
 }
-const return_api = (url) => {
-    console.log('URL:', url);
-};
-return_api('https://teste.com');
+cadastro("teste@teste.com", "123");
+cadastro("teste@teste.com", "123", "Afonso");

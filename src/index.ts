@@ -1,11 +1,27 @@
-//FUNCTION
-function returnApi(url:string):string{
-    return url;
+/*function cadastro (email:string, senha:string, nome:string):void{
+    let data = {email, senha, nome}
+    console.log(data);
 }
 
-//ARROWFUNCTION
-const return_api = (url:string):void =>{
-    console.log('URL:',url);
+cadastro("teste@teste.com","teste", "teste_nome");
+*/
+
+/*
+//example with value undefined
+function cadastro (email:string, senha:string, nome?:string):void{//or undefined
+    let data = {email, senha, nome}
+    console.log(data);
 }
 
-return_api('https://teste.com');
+cadastro("teste@teste.com.br", "teste_senha");
+*/
+
+//exemple with default value
+function cadastro (email:string, senha:string, nome="Aluno"):void{
+    let data = {email, senha, nome}
+    console.log(data);
+}
+
+cadastro("teste@teste.com","123");
+cadastro("teste@teste.com","123", "Afonso");
+
