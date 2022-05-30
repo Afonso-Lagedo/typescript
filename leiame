@@ -23,3 +23,5 @@ tsc --init
 
 PARA BUILD AUTO
 tsc --watch
+
+node ARQUIVO

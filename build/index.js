@@ -1,7 +1,13 @@
 "use strict";
-function cadastro(email, senha, nome = "Aluno") {
-    let data = { email, senha, nome };
-    console.log(data);
+function totalVendas(...vendas) {
+    const quantidade = vendas.length;
+    console.log(quantidade);
 }
-cadastro("teste@teste.com", "123");
-cadastro("teste@teste.com", "123", "Afonso");
+totalVendas(10, 20);
+totalVendas(10, 20, 30, 40);
+function mostra(...nomes) {
+    nomes.map(nome => {
+        console.log(nome);
+    });
+}
+mostra("Afonso", "Felipe");

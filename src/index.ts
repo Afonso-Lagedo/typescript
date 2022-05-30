@@ -1,27 +1,29 @@
-/*function cadastro (email:string, senha:string, nome:string):void{
-    let data = {email, senha, nome}
-    console.log(data);
-}
-
-cadastro("teste@teste.com","teste", "teste_nome");
-*/
-
 /*
-//example with value undefined
-function cadastro (email:string, senha:string, nome?:string):void{//or undefined
-    let data = {email, senha, nome}
-    console.log(data);
+//common function
+function totalVendas(venda1: number, venda2: number){
+    const total = venda1+venda2
+    console.log(total);
+    return total;
 }
-
-cadastro("teste@teste.com.br", "teste_senha");
+totalVendas(10, 35);
 */
 
-//exemple with default value
-function cadastro (email:string, senha:string, nome="Aluno"):void{
-    let data = {email, senha, nome}
-    console.log(data);
+
+//any quantity of parameter
+function totalVendas(...vendas:number[]){
+    const quantidade = vendas.length;
+
+    console.log(quantidade);
 }
 
-cadastro("teste@teste.com","123");
-cadastro("teste@teste.com","123", "Afonso");
+totalVendas(10,20);
+totalVendas(10,20, 30, 40);
 
+//example two
+function mostra(...nomes:string[]){
+    nomes.map(nome =>{
+        console.log(nome);
+    })
+}
+
+mostra("Afonso", "Felipe");
