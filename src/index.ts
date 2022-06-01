@@ -1,29 +1,50 @@
+//Interfaces
+
+//create interface with model of object
+
+/*let user: object;//declarted object 
+
+user = {
+    nome:"Afonso",
+    endereco:"Oriente",
+    status: true
+}*/
+
+//and now one interface 
+
+interface UserProps{
+    nome:string;
+    endereco:string;
+    status: boolean;
+}
+
+//EXEMPLE 1
+
 /*
-//common function
-function totalVendas(venda1: number, venda2: number){
-    const total = venda1+venda2
-    console.log(total);
-    return total;
-}
-totalVendas(10, 35);
-*/
-
-
-//any quantity of parameter
-function totalVendas(...vendas:number[]){
-    const quantidade = vendas.length;
-
-    console.log(quantidade);
+const userTest: UserProps = {
+    nome:"Afonso",
+    endereco:"Oriente",
+    status:true,
 }
 
-totalVendas(10,20);
-totalVendas(10,20, 30, 40);
+console.log(userTest);*/
 
-//example two
-function mostra(...nomes:string[]){
-    nomes.map(nome =>{
-        console.log(nome);
-    })
+//EXEMPLE 2
+
+/*function newUser(nome:string, endereco:string, status:boolean):void{
+    console.log(`Nome: ${nome}`);
+    console.log(`Endereco: ${endereco}`);
+    console.log(`Status: ${status}`);
 }
 
-mostra("Afonso", "Felipe");
+newUser("Afonso", "Oriente", true);*/
+
+//EXEMPLE 2B with interface application
+
+function newUser ({nome,endereco,status}:UserProps):void{
+    console.log(`Nome: ${nome}`);
+    console.log(`Endereço: ${endereco}`);
+    console.log(`Status: ${status}`);
+}
+
+newUser({nome:"Afonso", endereco:"Teste",status: true});
