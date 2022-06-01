@@ -1,50 +1,35 @@
-//Interfaces
-
-//create interface with model of object
-
-/*let user: object;//declarted object 
-
-user = {
-    nome:"Afonso",
-    endereco:"Oriente",
-    status: true
-}*/
-
-//and now one interface 
-
-interface UserProps{
-    nome:string;
-    endereco:string;
-    status: boolean;
+interface CadastroProps{
+    nome?: string; //? is optional 
+    email: string;
+    status:boolean;
 }
 
-//EXEMPLE 1
-
-/*
-const userTest: UserProps = {
-    nome:"Afonso",
-    endereco:"Oriente",
+const newUser: CadastroProps = {
+    email:"afonso.ur@gmail.com",
     status:true,
 }
 
-console.log(userTest);*/
+console.log(newUser); 
 
-//EXEMPLE 2
+//same exemple, with function
 
-/*function newUser(nome:string, endereco:string, status:boolean):void{
-    console.log(`Nome: ${nome}`);
-    console.log(`Endereco: ${endereco}`);
-    console.log(`Status: ${status}`);
+interface CadastroDoisProps{
+    nome:string;
+    email?: string;
+    status: boolean;
 }
 
-newUser("Afonso", "Oriente", true);*/
-
-//EXEMPLE 2B with interface application
-
-function newUser ({nome,endereco,status}:UserProps):void{
-    console.log(`Nome: ${nome}`);
-    console.log(`Endereço: ${endereco}`);
-    console.log(`Status: ${status}`);
+function user({nome, email, status}:CadastroDoisProps){
+    console.log(nome);
+    console.log(email);
+    console.log(status);
 }
 
-newUser({nome:"Afonso", endereco:"Teste",status: true});
+user({nome:"Afonso", status:false});
+user({nome:"Afonso Silva",email:"teste@teste.com", status:true});
+
+function userTeste(teste: CadastroDoisProps){
+    console.log(teste.nome);
+}
+
+userTeste({nome:"Afonso Silva",email:"teste@teste.com", status:true});

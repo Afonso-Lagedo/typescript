@@ -1,7 +1,17 @@
 "use strict";
-function newUser({ nome, endereco, status }) {
-    console.log(`Nome: ${nome}`);
-    console.log(`Endereço: ${endereco}`);
-    console.log(`Status: ${status}`);
+const newUser = {
+    email: "afonso.ur@gmail.com",
+    status: true,
+};
+console.log(newUser);
+function user({ nome, email, status }) {
+    console.log(nome);
+    console.log(email);
+    console.log(status);
 }
-newUser({ nome: "Afonso", endereco: "Teste", status: true });
+user({ nome: "Afonso", status: false });
+user({ nome: "Afonso Silva", email: "teste@teste.com", status: true });
+function userTeste(teste) {
+    console.log(teste.nome);
+}
+userTeste({ nome: "Afonso Silva", email: "teste@teste.com", status: true });
