@@ -1,17 +1,28 @@
 "use strict";
-const newUser = {
-    email: "afonso.ur@gmail.com",
-    status: true,
+function promo(price) {
+    console.log(`Value:${price}`);
+}
+const newProduct = {
+    id: "1",
+    name: "calça",
+    price: 20,
+    promocao: promo
 };
-console.log(newUser);
-function user({ nome, email, status }) {
-    console.log(nome);
-    console.log(email);
-    console.log(status);
-}
-user({ nome: "Afonso", status: false });
-user({ nome: "Afonso Silva", email: "teste@teste.com", status: true });
-function userTeste(teste) {
-    console.log(teste.nome);
-}
-userTeste({ nome: "Afonso Silva", email: "teste@teste.com", status: true });
+console.log(newProduct.promocao(15));
+console.log(newProduct);
+console.log("##########");
+const newCar = {
+    name: "Corsa",
+    model: "Sedan",
+    calc: (year) => {
+        console.log('Idade: ', 2022 - year);
+    }
+};
+console.log(newCar);
+console.log(newCar.calc(2002));
+console.log("##########");
+let sum = (valor1, valor2) => {
+    console.log('RESULT: ', valor1 + valor2);
+    return valor1 + valor2;
+};
+sum(2, 3);
