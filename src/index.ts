@@ -1,36 +1,33 @@
 
-interface ProductProps{
+/* ###VECTOR 
+interface TecnologyProps {
+    id: string;
+    name: string;
+    versions: (string | number)[];
+}
+
+let tec1: TecnologyProps = {
+    id:"1",
+    name: "PHP",
+    versions: ["php1", "php2", "php3", 7]
+}
+*/
+
+interface TecnologyProps {
     id:string;
     name: string;
-    description: string;
+    description?: string; //?optional 
 }
 
-let product1: ProductProps = {
-    id:"1",
-    name: "ps5",
-    description:"video game"    
+interface NamesProps{
+    tecnology: TecnologyProps [];//Reusing interface. Property is an array of the mentioned interface
 }
 
-console.log(product1);
-
-product1.id = "123";
-
-console.log(product1);
-
-interface NewProductProps{
-    readonly id:string;//not to be able to modify
-    name: string;
-    description: string;
+let frontend: NamesProps = {
+    tecnology: [
+        {id:"1", name: "ReactJS"},
+        {id:"2", name: "VUE"}
+    ]
 }
 
-let product2 : NewProductProps = {
-    id:"2",
-    name:"xbox",
-    description:"video Game"
-}
-
-console.log(product2);
-
-//product2.id="55"; //it is error
-console.log(product2.id); //can read 
-
+console.log(frontend.tecnology);
