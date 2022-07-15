@@ -1,58 +1,36 @@
+
 interface ProductProps{
-    id: string;
+    id:string;
     name: string;
-    price: number;
-
-    //set input and output
-    promocao: (price:number) => void;
+    description: string;
 }
 
-//External funciton
-function promo(price:number):void{
-    console.log(`Value:${price}`)
-}
-
-const newProduct:ProductProps = {
+let product1: ProductProps = {
     id:"1",
-    name:"calça",
-    price:20,
-    promocao:promo
+    name: "ps5",
+    description:"video game"    
 }
 
-console.log(newProduct.promocao(15));
-console.log(newProduct);
-console.log("##########");
-//Arrow function
+console.log(product1);
 
+product1.id = "123";
 
-interface CarProps{
-    name:string;
-    model:string;
-    calc:(year:number)=>void
+console.log(product1);
+
+interface NewProductProps{
+    readonly id:string;//not to be able to modify
+    name: string;
+    description: string;
 }
 
-const newCar:CarProps ={
-    name:"Corsa",
-    model:"Sedan",
-    calc: (year:number):void =>{
-        console.log('Idade: ', 2022-year);
-    }
+let product2 : NewProductProps = {
+    id:"2",
+    name:"xbox",
+    description:"video Game"
 }
 
-console.log(newCar);
-console.log(newCar.calc(2002));
-console.log("##########");
+console.log(product2);
 
-//exemple 3, only function
+//product2.id="55"; //it is error
+console.log(product2.id); //can read 
 
-//create interface
-interface SumProps{
-    (valor1: number, valor2:number):number;
-}
-
-let sum:SumProps = (valor1: number, valor2:number): number => {
-    console.log('RESULT: ', valor1+valor2)
-    return valor1+valor2;
-}
-
-sum(2,3);

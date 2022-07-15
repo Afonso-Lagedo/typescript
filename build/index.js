@@ -1,28 +1,16 @@
 "use strict";
-function promo(price) {
-    console.log(`Value:${price}`);
-}
-const newProduct = {
+let product1 = {
     id: "1",
-    name: "calça",
-    price: 20,
-    promocao: promo
+    name: "ps5",
+    description: "video game"
 };
-console.log(newProduct.promocao(15));
-console.log(newProduct);
-console.log("##########");
-const newCar = {
-    name: "Corsa",
-    model: "Sedan",
-    calc: (year) => {
-        console.log('Idade: ', 2022 - year);
-    }
+console.log(product1);
+product1.id = "123";
+console.log(product1);
+let product2 = {
+    id: "2",
+    name: "xbox",
+    description: "video Game"
 };
-console.log(newCar);
-console.log(newCar.calc(2002));
-console.log("##########");
-let sum = (valor1, valor2) => {
-    console.log('RESULT: ', valor1 + valor2);
-    return valor1 + valor2;
-};
-sum(2, 3);
+console.log(product2);
+console.log(product2.id);
