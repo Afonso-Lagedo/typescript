@@ -1,8 +1,15 @@
 "use strict";
-let frontend = {
-    tecnology: [
-        { id: "1", name: "ReactJS" },
-        { id: "2", name: "VUE" }
-    ]
+const fifa = {
+    id: "1",
+    name: "fifa",
+    platform: ["ps5", "xbox", "pc"]
 };
-console.log(frontend.tecnology);
+console.log(fifa);
+const fifaDLC = {
+    id: "11",
+    name: "Fifa add",
+    platform: ["ps5", "xbox", "pc"],
+    newContents: ["Libertadores", "WordCup"],
+    origin: fifa
+};
+console.log(fifaDLC);

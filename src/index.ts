@@ -1,33 +1,30 @@
 
-/* ###VECTOR 
-interface TecnologyProps {
-    id: string;
+interface GameProps{
+    readonly id: string;
     name: string;
-    versions: (string | number)[];
+    description?: string;
+    platform: string[];
 }
 
-let tec1: TecnologyProps = {
-    id:"1",
-    name: "PHP",
-    versions: ["php1", "php2", "php3", 7]
-}
-*/
-
-interface TecnologyProps {
-    id:string;
-    name: string;
-    description?: string; //?optional 
+const fifa: GameProps ={
+    id: "1",
+    name: "fifa",
+    platform: ["ps5", "xbox", "pc"]
 }
 
-interface NamesProps{
-    tecnology: TecnologyProps [];//Reusing interface. Property is an array of the mentioned interface
+console.log(fifa);
+
+interface DLC extends GameProps {
+    origin: GameProps;
+    newContents: string[];
 }
 
-let frontend: NamesProps = {
-    tecnology: [
-        {id:"1", name: "ReactJS"},
-        {id:"2", name: "VUE"}
-    ]
+const fifaDLC: DLC = {
+    id:"11",
+    name: "Fifa add",
+    platform: ["ps5", "xbox", "pc"],
+    newContents: ["Libertadores","WordCup"],
+    origin: fifa
 }
 
-console.log(frontend.tecnology);
+console.log (fifaDLC);
