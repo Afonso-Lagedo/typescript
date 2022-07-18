@@ -1,30 +1,19 @@
+//###TYPE ALIAS###
 
-interface GameProps{
-    readonly id: string;
-    name: string;
-    description?: string;
-    platform: string[];
+type TypeId = number | string | null;
+
+//function access (id: string | number | null, name: string){//example without type alias
+function access (id: TypeId, name: string){//example with type alias
+    console.log (`Id: ${id} - Nome: ${name}`)
 }
 
-const fifa: GameProps ={
-    id: "1",
-    name: "fifa",
-    platform: ["ps5", "xbox", "pc"]
+//function log(id: string | number | null){//example without type alias
+function log(id:TypeId){//example with type alias
+    console.log(`Conta de id: ${id}`)
 }
 
-console.log(fifa);
+access(123, "Afonso");
 
-interface DLC extends GameProps {
-    origin: GameProps;
-    newContents: string[];
-}
+access("7", "Rafaela");
 
-const fifaDLC: DLC = {
-    id:"11",
-    name: "Fifa add",
-    platform: ["ps5", "xbox", "pc"],
-    newContents: ["Libertadores","WordCup"],
-    origin: fifa
-}
-
-console.log (fifaDLC);
+log("5");

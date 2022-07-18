@@ -1,15 +1,10 @@
 "use strict";
-const fifa = {
-    id: "1",
-    name: "fifa",
-    platform: ["ps5", "xbox", "pc"]
-};
-console.log(fifa);
-const fifaDLC = {
-    id: "11",
-    name: "Fifa add",
-    platform: ["ps5", "xbox", "pc"],
-    newContents: ["Libertadores", "WordCup"],
-    origin: fifa
-};
-console.log(fifaDLC);
+function access(id, name) {
+    console.log(`Id: ${id} - Nome: ${name}`);
+}
+function log(id) {
+    console.log(`Conta de id: ${id}`);
+}
+access(123, "Afonso");
+access("7", "Rafaela");
+log("5");
