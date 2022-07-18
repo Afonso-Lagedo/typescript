@@ -1,10 +1,16 @@
 "use strict";
-function access(id, name) {
-    console.log(`Id: ${id} - Nome: ${name}`);
-}
-function log(id) {
-    console.log(`Conta de id: ${id}`);
-}
-access(123, "Afonso");
-access("7", "Rafaela");
-log("5");
+const productInfo = {
+    id: 123,
+    name: "video card",
+};
+const categoryOne = {
+    category_name: "Hardware",
+    quantity: 5
+};
+const newProduct = {
+    id: 123,
+    name: " game control",
+    category_name: "video game",
+    quantity: 7
+};
+console.log(newProduct);
