@@ -1,35 +1,18 @@
+/*
+POO
+*/
 
-type Info = {
-    id: number;
-    name: string;
-    description?: string;
+class Store{
+    name:string;
+    category: string;
+
+    constructor(name:string, category:string){
+        this.name= name;
+        this.category = category;
+    }
 }
 
-type Category = {
-    category_name: string,
-    quantity: number
-}
+const bk = new Store("BK", "Burguer");
 
-
-const productInfo: Info ={
-    id:123,
-    name:"video card",
-    //description: ""//optional
-}
-
-const categoryOne: Category = {
-    category_name: "Hardware",
-    quantity: 5
-}
-
-//###INTERSECTION###
-type TypeTotalInfo = Info & Category;
-
-const newProduct: TypeTotalInfo = {
-    id:123,
-    name:" game control",
-    category_name:"video game",
-    quantity: 7
-}
-
-console.log(newProduct)
+console.log(bk)
+console.log(bk.name)

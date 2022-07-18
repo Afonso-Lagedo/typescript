@@ -1,16 +1,10 @@
 "use strict";
-const productInfo = {
-    id: 123,
-    name: "video card",
-};
-const categoryOne = {
-    category_name: "Hardware",
-    quantity: 5
-};
-const newProduct = {
-    id: 123,
-    name: " game control",
-    category_name: "video game",
-    quantity: 7
-};
-console.log(newProduct);
+class Store {
+    constructor(name, category) {
+        this.name = name;
+        this.category = category;
+    }
+}
+const bk = new Store("BK", "Burguer");
+console.log(bk);
+console.log(bk.name);

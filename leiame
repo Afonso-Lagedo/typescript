@@ -20,6 +20,7 @@ tsc NOME_ARQUIVO.ts --target "ES2015"
 
 PARA CONFIG TYPESCRIPT
 tsc --init
+GERANDO ARQUIVO tsconfig.json CONFIGURAR "outDir" e "rootDir" GERALMENTE LINHA 17,18
 
 PARA BUILD AUTO
 tsc --watch
