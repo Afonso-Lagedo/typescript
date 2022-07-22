@@ -11,7 +11,12 @@ class Admin extends User {
         this.position = position;
         this.level = level;
     }
+    modifyPosition() {
+        console.log("Position Modified");
+    }
 }
 const user1 = new Admin("Afonso", "afonso.ur@gmail.com", "DEV", 2);
 console.log(user1);
-console.log(user1.name);
+user1.modifyPosition();
+console.log(user1.position);
+user1.position = "MANEGER";
