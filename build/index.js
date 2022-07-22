@@ -1,33 +1,17 @@
 "use strict";
-class Store {
-    constructor(name, category) {
+class User {
+    constructor(name, email) {
         this.name = name;
-        this.category = category;
-    }
-    newStore() {
-        console.log(`Store: ${this.name}, Category: ${this.category}`);
-    }
-    newRequeset(table) {
-        return ` Table: ${table}`;
-    }
-    products(...products) {
-        products.map((products) => {
-            console.log(`Item: ${products}`);
-        });
-    }
-    status(status) {
-        if (status === "OPEN") {
-            console.log("STORE OPEN");
-        }
-        else {
-            console.log("STORE CLOSED");
-        }
+        this.email = email;
     }
 }
-const bk = new Store("BK", "Burguer");
-bk.newStore();
-const newRequeset = bk.newRequeset(7);
-console.log(newRequeset);
-const test = bk.products("Hamburguer", "Juice", "Chocolate");
-console.log(test);
-bk.status("CLOSED");
+class Admin extends User {
+    constructor(name, email, position, level) {
+        super(name, email);
+        this.position = position;
+        this.level = level;
+    }
+}
+const user1 = new Admin("Afonso", "afonso.ur@gmail.com", "DEV", 2);
+console.log(user1);
+console.log(user1.name);

@@ -1,54 +1,33 @@
 /*
-POO
+POO heritage
 */
-type TypeStatus = "OPEN" | "CLOSED";
 
-class Store{
-    //attributes
-    name:string;
-    category: string;
+class User{
+    name: string;
+    email:string;
 
-    //constructor
-    constructor(name:string, category:string){
-        this.name= name;
-        this.category = category;
-    }
-
-    //method without paramers
-    newStore(){
-        console.log(`Store: ${this.name}, Category: ${this.category}`);
-    }
-
-    //method with paramers
-    newRequeset(table:number): string{
-        return` Table: ${table}`;
-    }
-
-    //method unknown amount of attributes
-    products(...products: string[]){
-        products.map((products) => {
-            console.log(`Item: ${products}`)
-        })
-    }
-
-    status(status:TypeStatus):void{
-        if(status === "OPEN"){
-            console.log("STORE OPEN");
-        }
-        else{
-            console.log("STORE CLOSED");
-        }
+    constructor(name:string, email:string){
+        this.name = name;
+        this.email = email;
     }
 }
 
-const bk = new Store("BK", "Burguer");
+class Admin extends User{ //heritage of User
+    
+    position: string;
+    level: number;
 
-bk.newStore();
+    constructor(name:string, email:string, position:string, level:number){
+        
+        super(name, email);
 
-const newRequeset = bk.newRequeset(7);
-console.log(newRequeset);
+        this.position = position;
+        this.level = level;
+    }
+    
+}
 
-const test = bk.products("Hamburguer", "Juice", "Chocolate"); 
-console.log(test);
+const user1 = new Admin("Afonso", "afonso.ur@gmail.com", "DEV", 2);
 
-bk.status("CLOSED");
+console.log(user1);
+console.log(user1.name);
