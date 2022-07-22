@@ -1,16 +1,14 @@
 /*
-POO encapsulation-PUBLIC
-public: all can view or modify, only own class, no necess of are declared, is the default
-private: nobody can view or modify
-protected: son class can view and modify
-readonly:  only read
+POO encapsulation-PROTECTED
 */
 
 class User{
-    public name: string;
-    public email:string;
+    protected id:number;
+    name: string;
+    email:string;
 
-    constructor(name:string, email:string){
+    constructor(id:number, name:string, email:string){
+        this.id =  id;
         this.name = name;
         this.email = email;
     }
@@ -21,24 +19,36 @@ class Admin extends User{ //heritage of User
     position: string;
     level: number;
 
-    constructor(name:string, email:string, position:string, level:number){
+    constructor(id:number, name:string, email:string, position:string, level:number){
         
-        super(name, email);
+        super(id, name, email);
 
         this.position = position;
         this.level = level;
     }
 
-    modifyPosition(){// public for default 
+    modifyPosition(){
         console.log("Position Modified");
+        console.log("User ID:", this.id); //I can modify, why this class is son 
     }
     
+    protected modifyLevel(){
+        console.log("User Level"); 
+    }
+
+    acessTest(){
+        this.modifyLevel();
+    }
 }
 
-const user1 = new Admin("Afonso", "afonso.ur@gmail.com", "DEV", 2);
+const user1 = new Admin(1,"Afonso", "afonso.ur@gmail.com", "DEV", 2);
 
 console.log(user1);
+
 user1.modifyPosition();
 
-console.log(user1.position);
-user1.position = "MANEGER";//Can are modify, why is public
+user1.acessTest();
+
+//user1.modifyLevel();//it is protected
+
+//user1.id; //it is an error >>> Can't acess why is protected

@@ -1,22 +1,29 @@
 "use strict";
 class User {
-    constructor(name, email) {
+    constructor(id, name, email) {
+        this.id = id;
         this.name = name;
         this.email = email;
     }
 }
 class Admin extends User {
-    constructor(name, email, position, level) {
-        super(name, email);
+    constructor(id, name, email, position, level) {
+        super(id, name, email);
         this.position = position;
         this.level = level;
     }
     modifyPosition() {
         console.log("Position Modified");
+        console.log("User ID:", this.id);
+    }
+    modifyLevel() {
+        console.log("User Level");
+    }
+    acessTest() {
+        this.modifyLevel();
     }
 }
-const user1 = new Admin("Afonso", "afonso.ur@gmail.com", "DEV", 2);
+const user1 = new Admin(1, "Afonso", "afonso.ur@gmail.com", "DEV", 2);
 console.log(user1);
 user1.modifyPosition();
-console.log(user1.position);
-user1.position = "MANEGER";
+user1.acessTest();
