@@ -1,54 +1,28 @@
 /*
-POO encapsulation-PROTECTED
+POO encapsulation-PRIVATE
 */
 
-class User{
-    protected id:number;
-    name: string;
-    email:string;
+class Account {
+    private limit: number = 450;
 
-    constructor(id:number, name:string, email:string){
-        this.id =  id;
-        this.name = name;
-        this.email = email;
+    private upLimit (quantity:number){
+        if(quantity < 1000){
+            this.limit = quantity;
+            console.log(`Now, your limit is: ${this.limit}`);
+        }
     }
 }
 
-class Admin extends User{ //heritage of User
-    
-    position: string;
-    level: number;
 
-    constructor(id:number, name:string, email:string, position:string, level:number){
-        
-        super(id, name, email);
-
-        this.position = position;
-        this.level = level;
-    }
-
-    modifyPosition(){
-        console.log("Position Modified");
-        console.log("User ID:", this.id); //I can modify, why this class is son 
-    }
-    
-    protected modifyLevel(){
-        console.log("User Level"); 
-    }
-
-    acessTest(){
-        this.modifyLevel();
+class AccountPremium extends Account{
+    limitAccount(){
+        //return this.upLimit(1500);//it is error, why is private
     }
 }
 
-const user1 = new Admin(1,"Afonso", "afonso.ur@gmail.com", "DEV", 2);
+const User1 = new Account();
 
-console.log(user1);
+console.log(User1);
+//User1.upLimit;//it is error, why is Private
 
-user1.modifyPosition();
 
-user1.acessTest();
-
-//user1.modifyLevel();//it is protected
-
-//user1.id; //it is an error >>> Can't acess why is protected

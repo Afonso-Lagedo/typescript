@@ -1,29 +1,18 @@
 "use strict";
-class User {
-    constructor(id, name, email) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
+class Account {
+    constructor() {
+        this.limit = 450;
+    }
+    upLimit(quantity) {
+        if (quantity < 1000) {
+            this.limit = quantity;
+            console.log(`Now, your limit is: ${this.limit}`);
+        }
     }
 }
-class Admin extends User {
-    constructor(id, name, email, position, level) {
-        super(id, name, email);
-        this.position = position;
-        this.level = level;
-    }
-    modifyPosition() {
-        console.log("Position Modified");
-        console.log("User ID:", this.id);
-    }
-    modifyLevel() {
-        console.log("User Level");
-    }
-    acessTest() {
-        this.modifyLevel();
+class AccountPremium extends Account {
+    limitAccount() {
     }
 }
-const user1 = new Admin(1, "Afonso", "afonso.ur@gmail.com", "DEV", 2);
-console.log(user1);
-user1.modifyPosition();
-user1.acessTest();
+const User1 = new Account();
+console.log(User1);
