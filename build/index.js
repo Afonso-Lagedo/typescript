@@ -1,18 +1,15 @@
 "use strict";
-class Account {
-    constructor() {
-        this.limit = 450;
+class Person {
+    constructor(name, age) {
+        this.id = "123";
+        this.name = name;
+        this.age = age;
     }
-    upLimit(quantity) {
-        if (quantity < 1000) {
-            this.limit = quantity;
-            console.log(`Now, your limit is: ${this.limit}`);
-        }
-    }
-}
-class AccountPremium extends Account {
-    limitAccount() {
+    showId() {
+        console.log(`ID: `, this.id);
     }
 }
-const User1 = new Account();
-console.log(User1);
+const Afonso = new Person("Afonso", 28);
+console.log(Afonso);
+Afonso.showId();
+console.log(Afonso.id);
