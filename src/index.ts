@@ -1,40 +1,51 @@
-//Getters and Setters, for no direct access
 
-class Game{
-    private server: string;
-    private id: string = "1234"
+type DataAccount = {
+    name:string;
+    number:string;
+    address:string;
+}
 
-    constructor(server:string){
-        this.server=server;
+abstract class AccountBank{ //cannot be instantiated
+    abstract newAccount(data:DataAccount):boolean;
+}
+
+class PhysicalPerson extends AccountBank{
+    newAccount(data: DataAccount): boolean {
+        
+        console.log(`New account physical person created with success ${data.name}`)
+
+        return true;
     }
+}
 
-    //GET: get value 
-    get getServe(){
-        return this.server;
+class LegalPerson extends AccountBank{
+    newAccount(data: DataAccount): boolean {
+        
+        console.log(`New account legal person created with success ${data.name}`)
+
+        return true;
     }
-
-    //SET: modify value
-    set setServer(newServer:string){
-        if(this.server === newServer){
-            throw new Error("new server equals old server");
-        }
-
-        this.server=newServer;
-    }    
-}
-
-const GTA = new Game("192.168.15.10");
-
-console.log(GTA);
-
-
-try{
-    GTA.setServer = "192.168.15.10";
-}
-catch(error){
-    console.log("Error:", error.message);
 }
 
 
-console.log(GTA);
+
+const Afonso = new PhysicalPerson();
+
+Afonso.newAccount({
+    name:"Afonso",
+    number:"123",
+    address:"AV Faria Lima"
+});
+
+
+
+const Dev = new LegalPerson();
+
+Dev.newAccount({
+    name:"Dev Afonso",
+    number:"456",
+    address:"AV PAULISTA"
+});
+
+
 

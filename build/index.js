@@ -1,25 +1,27 @@
 "use strict";
-class Game {
-    constructor(server) {
-        this.id = "1234";
-        this.server = server;
-    }
-    get getServe() {
-        return this.server;
-    }
-    set setServer(newServer) {
-        if (this.server === newServer) {
-            throw new Error("new server equals old server");
-        }
-        this.server = newServer;
+class AccountBank {
+}
+class PhysicalPerson extends AccountBank {
+    newAccount(data) {
+        console.log(`New account physical person created with success ${data.name}`);
+        return true;
     }
 }
-const GTA = new Game("192.168.15.10");
-console.log(GTA);
-try {
-    GTA.setServer = "192.168.15.10";
+class LegalPerson extends AccountBank {
+    newAccount(data) {
+        console.log(`New account legal person created with success ${data.name}`);
+        return true;
+    }
 }
-catch (error) {
-    console.log("Error:", error.message);
-}
-console.log(GTA);
+const Afonso = new PhysicalPerson();
+Afonso.newAccount({
+    name: "Afonso",
+    number: "123",
+    address: "AV Faria Lima"
+});
+const Dev = new LegalPerson();
+Dev.newAccount({
+    name: "Dev Afonso",
+    number: "456",
+    address: "AV PAULISTA"
+});
