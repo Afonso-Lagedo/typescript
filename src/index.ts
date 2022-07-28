@@ -1,29 +1,30 @@
-/*
-POO encapsulation-READONLY
-*/
+//Getters and Setters, for no direct access
 
-class Person{
-    readonly id:string = "123";//enter ID is automatic, then no passing for constructor
-    name: string;
-    age: number;
+class Game{
+    private server: string;
+    private id: string = "1234"
 
-    constructor(name:string, age:number){
-        this.name=name;
-        this.age=age;
+    constructor(server:string){
+        this.server=server;
     }
 
-    //READONLY, does not work with function 
-    showId(){
-        //this.id="99";//it is erro, why id is READONLY 
-        console.log(`ID: `, this.id)
+    //GET: get value 
+    get getServe(){
+        return this.server;
     }
+
+    //SET: modify value
+    set setServer(newServer:string){
+        this.server=newServer;
+    }    
 }
 
-const Afonso = new Person("Afonso", 28);
-console.log(Afonso);
+const GTA = new Game("192.168.15.10");
 
-//Afonso.id = "145";//it is erro, why id is READONLY 
+//GTA.id;//It is an error, why is private
 
-Afonso.showId();
-//or
-console.log(Afonso.id);
+console.log(GTA);
+console.log(GTA.getServe);
+
+GTA.setServer="192.168.15.15";
+console.log(GTA.getServe);
