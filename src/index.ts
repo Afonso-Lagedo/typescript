@@ -1,51 +1,39 @@
+import { applyMixins } from './mixin';
 
-type DataAccount = {
+class Vehicle{
+    on():void{
+        console.log("car is on");
+    }
+    off():void{
+        console.log("car is off");
+    }
+}
+
+class Specification{
+    description:string;
+
+    constructor(description:string){
+        this.description=description;
+    }
+}
+
+class Car{
     name:string;
-    number:string;
-    address:string;
-}
 
-abstract class AccountBank{ //cannot be instantiated
-    abstract newAccount(data:DataAccount):boolean;
-}
-
-class PhysicalPerson extends AccountBank{
-    newAccount(data: DataAccount): boolean {
-        
-        console.log(`New account physical person created with success ${data.name}`)
-
-        return true;
+    constructor(name:string){
+        this.name=name;
     }
 }
 
-class LegalPerson extends AccountBank{
-    newAccount(data: DataAccount): boolean {
-        
-        console.log(`New account legal person created with success ${data.name}`)
+interface Car extends Vehicle, Specification{};
 
-        return true;
-    }
-}
+//atributt:(interface and [class])
+applyMixins(Car,[Vehicle, Specification]);
 
+const opala = new Car("Opala 4.0");
+opala.description = "BEBE PRA P####"
 
-
-const Afonso = new PhysicalPerson();
-
-Afonso.newAccount({
-    name:"Afonso",
-    number:"123",
-    address:"AV Faria Lima"
-});
-
-
-
-const Dev = new LegalPerson();
-
-Dev.newAccount({
-    name:"Dev Afonso",
-    number:"456",
-    address:"AV PAULISTA"
-});
-
-
+opala.on();
+console.log(opala);
+opala.off()
 

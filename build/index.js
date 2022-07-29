@@ -1,27 +1,28 @@
 "use strict";
-class AccountBank {
-}
-class PhysicalPerson extends AccountBank {
-    newAccount(data) {
-        console.log(`New account physical person created with success ${data.name}`);
-        return true;
+Object.defineProperty(exports, "__esModule", { value: true });
+const mixin_1 = require("./mixin");
+class Vehicle {
+    on() {
+        console.log("car is on");
+    }
+    off() {
+        console.log("car is off");
     }
 }
-class LegalPerson extends AccountBank {
-    newAccount(data) {
-        console.log(`New account legal person created with success ${data.name}`);
-        return true;
+class Specification {
+    constructor(description) {
+        this.description = description;
     }
 }
-const Afonso = new PhysicalPerson();
-Afonso.newAccount({
-    name: "Afonso",
-    number: "123",
-    address: "AV Faria Lima"
-});
-const Dev = new LegalPerson();
-Dev.newAccount({
-    name: "Dev Afonso",
-    number: "456",
-    address: "AV PAULISTA"
-});
+class Car {
+    constructor(name) {
+        this.name = name;
+    }
+}
+;
+(0, mixin_1.applyMixins)(Car, [Vehicle, Specification]);
+const opala = new Car("Opala 4.0");
+opala.description = "BEBE PRA P####";
+opala.on();
+console.log(opala);
+opala.off();
