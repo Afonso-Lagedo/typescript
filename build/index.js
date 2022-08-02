@@ -1,28 +1,13 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const mixin_1 = require("./mixin");
-class Vehicle {
-    on() {
-        console.log("car is on");
-    }
-    off() {
-        console.log("car is off");
-    }
+const connection_1 = require("./database/connection");
+const app_1 = __importDefault(require("./database/app"));
+function accessSystem() {
+    (0, connection_1.connection)({ ip: "192.168.15.10", name: "MySQL" });
 }
-class Specification {
-    constructor(description) {
-        this.description = description;
-    }
-}
-class Car {
-    constructor(name) {
-        this.name = name;
-    }
-}
-;
-(0, mixin_1.applyMixins)(Car, [Vehicle, Specification]);
-const opala = new Car("Opala 4.0");
-opala.description = "BEBE PRA P####";
-opala.on();
-console.log(opala);
-opala.off();
+accessSystem();
+(0, connection_1.status)();
+(0, app_1.default)();
