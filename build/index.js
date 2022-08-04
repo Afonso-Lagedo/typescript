@@ -1,13 +1,18 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const connection_1 = require("./database/connection");
-const app_1 = __importDefault(require("./database/app"));
-function accessSystem() {
-    (0, connection_1.connection)({ ip: "192.168.15.10", name: "MySQL" });
+function repository() {
+    let datas;
+    function getDatas() {
+        return datas;
+    }
+    function setDatas(newDatas) {
+        datas = newDatas;
+    }
+    return { setDatas, getDatas };
 }
-accessSystem();
-(0, connection_1.status)();
-(0, app_1.default)();
+const rep1 = repository();
+rep1.setDatas(20);
+console.log(rep1.getDatas());
+rep1.setDatas("20");
+console.log(rep1.getDatas());
+const rep2 = repository();
+rep2.setDatas("11");
