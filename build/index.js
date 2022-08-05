@@ -1,18 +1,22 @@
 "use strict";
-function repository() {
-    let datas;
-    function getDatas() {
-        return datas;
+const riceA = {
+    name: "white rice",
+    price: 1500,
+    format(value) {
+        let valueFormat = value.toLocaleString('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+        });
+        return valueFormat;
     }
-    function setDatas(newDatas) {
-        datas = newDatas;
-    }
-    return { setDatas, getDatas };
-}
-const rep1 = repository();
-rep1.setDatas(20);
-console.log(rep1.getDatas());
-rep1.setDatas("20");
-console.log(rep1.getDatas());
-const rep2 = repository();
-rep2.setDatas("11");
+};
+console.log(riceA.format(1500));
+const Car1 = {
+    name: "Corsa",
+    year: 2000
+};
+const Afonso = {
+    name: "Afonso",
+    year: "28"
+};
+console.log(Afonso);

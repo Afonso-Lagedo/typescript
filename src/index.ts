@@ -1,76 +1,71 @@
-//Generics: adaptable structure
-//use in function, interface, type, class 
+//#####generics in interfaces 
 
-/*function repository(){
-    let datas: number;
-
-    function getDatas(){
-        return datas;
-    }
-
-    function setDatas(newDatas:number){
-        datas =  newDatas;
-    }
-
-    return{setDatas, getDatas};
+/*interface NewProduct<V>{
+    name:string;
+    price:V;
 }
 
-
-const rep1 = repository();
-
-rep1.setDatas(20);
-
-console.log(rep1.getDatas());
-*/
-
-//is error:
-//rep1.setDatas("20");
-
-
-//###With generics
-
-function repository<T>(){ //for strength in one or more types: <T extends string | number>
-    let datas: T;
-
-    function getDatas(){
-        return datas;
-    }
-
-    function setDatas(newDatas:T){
-        datas =  newDatas;
-    }
-
-    return{setDatas, getDatas};
+const riceA: NewProduct<number> = {
+    name:"white rice",
+    price:1500
 }
 
+const riceB: NewProduct<number | string> = {
+    name:"white rice",
+    price:"Test"
+}*/
 
-const rep1 = repository();
+//with methods
 
-rep1.setDatas(20);
+interface NewProduct<V extends number>{
+    name:string;
+    price:V;
 
-console.log(rep1.getDatas());
+    format(value: V): string;
+}
 
-rep1.setDatas("20");
+const riceA: NewProduct<number> = {
+    name:"white rice",
+    price:1500
 
-console.log(rep1.getDatas());
+    format(value: number):string{
+        let valueFormat = value.toLocaleString('pt-BR',{
+            style:"currency",
+            currency:"BRL"
+        })
+
+        return valueFormat
+    }
+}
+
+console.log(riceA.format(1500));
 
 
-//example 2, defined generic
+//console.log(riceA);
+//console.log(riceB);
 
-const rep2 = repository<string>();
+interface NewCar<T extends number>{
+    name: string;
+    year: T;
+}
 
-rep2.setDatas("11");
+const Car1: NewCar<number> = { // <string> is error, because extends number
+    name: "Corsa",
+    year: 2000
+}
 
-//is error:
-//rep2.setDatas(11);
+//console.log(Car1);
 
+//#####generics in Type
 
-/*
-###Standards
+type NewPerson <A extends number | string> ={
+    name: string;
+    year: A;
+}
 
-S state
-T type
-K key
-V value
-E element
-*/
+const Afonso: NewPerson<string>={
+    name:"Afonso",
+    year:"28"
+}
+
+console.log(Afonso);
